@@ -12,4 +12,5 @@ public interface PersonService {
     void deletePerson(Long id);
 
     List<Person> getPersonsByAge(Integer minAge, Integer maxAge);
+    List<Person> getPersonsByAgeUsingQueryAnnotation(Integer minAge, Integer maxAge);
 }

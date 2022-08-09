@@ -36,4 +36,9 @@ public class PersonServiceImpl implements PersonService {
     public List<Person> getPersonsByAge(Integer minAge, Integer maxAge) {
         return this.personRepo.findByAgeBetween(minAge, maxAge);
     }
+
+    @Override
+    public List<Person> getPersonsByAgeUsingQueryAnnotation(Integer minAge, Integer maxAge) {
+        return this.personRepo.findPersonsByAgeBetween(minAge, maxAge);
+    }
 }
