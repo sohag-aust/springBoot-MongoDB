@@ -10,4 +10,5 @@ import java.util.List;
 public interface PersonRepo extends MongoRepository<Person, Long> {
 
     List<Person> findByFirstNameStartsWith(String name);
+    List<Person> findByAgeBetween(Integer min, Integer max); // it will operate as (>=min && <max)
 }

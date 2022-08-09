@@ -30,4 +30,9 @@ public class PersonController {
     public void deletePerson(@PathVariable Long id) {
         this.personService.deletePerson(id);
     }
+
+    @GetMapping("/getByAge")
+    public List<Person> getPersonsByAge(@RequestParam Integer minAge, @RequestParam Integer maxAge) {
+        return this.personService.getPersonsByAge(minAge, maxAge);
+    }
 }
