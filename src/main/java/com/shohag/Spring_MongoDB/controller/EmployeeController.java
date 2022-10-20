@@ -5,6 +5,7 @@ import com.shohag.Spring_MongoDB.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/employee")
@@ -44,5 +45,10 @@ public class EmployeeController {
     @GetMapping("/firstName")
     public List<Employee> getByFirstName(@RequestParam String firstName) {
         return employeeService.getByFirstName(firstName);
+    }
+
+    @GetMapping("/groupBySalary")
+    public Map<String, Object> getEmployeeGroupBySalary() {
+        return employeeService.getEmployeeGroupBySalary();
     }
 }
