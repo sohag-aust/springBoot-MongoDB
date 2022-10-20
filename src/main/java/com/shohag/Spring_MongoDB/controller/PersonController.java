@@ -39,6 +39,11 @@ public class PersonController {
         return this.personService.getPersonsByAge(minAge, maxAge);
     }
 
+    @GetMapping("/")
+    public List<Person> getAll() {
+        return this.personService.getAllPersons();
+    }
+
     @GetMapping("/getByAgeUsingQueryAnnotation")
     public List<Person> getPersonsByAgeUsingQueryAnnotation(@RequestParam Integer minAge, @RequestParam Integer maxAge) {
         return this.personService.getPersonsByAge(minAge, maxAge);

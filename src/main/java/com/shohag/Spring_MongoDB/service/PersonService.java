@@ -17,4 +17,6 @@ public interface PersonService {
     List<Person> getPersonsByAgeUsingQueryAnnotation(Integer minAge, Integer maxAge);
 
     Page<Person> search(String name, Integer minAge, Integer maxAge, String city, Pageable pageable);
+
+    List<Person> getAllPersons();
 }

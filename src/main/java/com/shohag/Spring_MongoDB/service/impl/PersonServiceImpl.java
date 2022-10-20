@@ -77,4 +77,9 @@ public class PersonServiceImpl implements PersonService {
 
         return person;
     }
+
+    @Override
+    public List<Person> getAllPersons() {
+        return this.personRepo.findAll();
+    }
 }

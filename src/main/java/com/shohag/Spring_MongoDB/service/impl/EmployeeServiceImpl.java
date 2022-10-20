@@ -1,7 +1,7 @@
 package com.shohag.Spring_MongoDB.service.impl;
 
 import com.shohag.Spring_MongoDB.model.Employee;
-import com.shohag.Spring_MongoDB.repository.EmployeeRepo;
+import com.shohag.Spring_MongoDB.repository.EmployeeRepoImpl;
 import com.shohag.Spring_MongoDB.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
@@ -11,40 +11,40 @@ import java.util.List;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-    private EmployeeRepo employeeRepo;
+    private EmployeeRepoImpl employeeRepoImpl;
 
-    public EmployeeServiceImpl(EmployeeRepo employeeRepo) {
-        this.employeeRepo = employeeRepo;
+    public EmployeeServiceImpl(EmployeeRepoImpl employeeRepoImpl) {
+        this.employeeRepoImpl = employeeRepoImpl;
     }
 
     @Override
     public Employee save(Employee employee) {
         employee.setJoiningDate(new Date());
-        return employeeRepo.save(employee);
+        return employeeRepoImpl.save(employee);
     }
 
     @Override
     public List<Employee> getAll() {
-        return employeeRepo.findAll();
+        return employeeRepoImpl.findAll();
     }
 
     @Override
     public Employee update(Employee employee) {
-        return employeeRepo.save(employee); // upsert will perform here
+        return employeeRepoImpl.save(employee); // upsert will perform here
     }
 
     @Override
     public long delete(Employee employee) {
-        return employeeRepo.delete(employee);
+        return employeeRepoImpl.delete(employee);
     }
 
     @Override
     public List<Employee> getBySalary(int salary) {
-        return employeeRepo.getBySalary(salary);
+        return employeeRepoImpl.getBySalary(salary);
     }
 
     @Override
     public List<Employee> getByFirstName(String firstName) {
-        return employeeRepo.getByFirstName(firstName);
+        return employeeRepoImpl.getByFirstName(firstName);
     }
 }
